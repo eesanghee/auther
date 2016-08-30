@@ -32,6 +32,7 @@ router.post('/', function (req, res, next) {
   .catch(next);
 });
 
+
 router.get('/:id', function (req, res, next) {
   req.requestedUser.reload({include: [Story]})
   .then(function (requestedUser) {
