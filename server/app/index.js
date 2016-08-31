@@ -36,6 +36,13 @@ app.post('/login', function (req, res, next) {
   .catch(next);
 });
 
+app.get('/logout', function (req, res) {
+  console.log('before', req.session.userId);
+  req.session.userId = null;
+  console.log('after', req.session.userId);
+  res.redirect('/');
+});
+
 app.use(function (req, res, next) {
   console.log('session', req.session);
   next();

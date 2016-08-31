@@ -1,7 +1,7 @@
-app.controller('SignupCtrl', function($scope, SignupFactory, $state, $log){
+app.controller('SignupCtrl', function($scope, AuthFactory, $state, $log){
   $scope.submitSignup = function(form){
     console.log('form before user', form);
-    SignupFactory.createUser(form)
+    AuthFactory.createUser(form)
       .then(function(newUser){
         console.log('newuser', newUser);
         $state.go('home');
